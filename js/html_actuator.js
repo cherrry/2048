@@ -55,15 +55,16 @@ HTMLActuator.prototype.addTile = function (tile) {
   var positionClass = this.positionClass(position);
 
   // We can't use classlist because it somehow glitches when replacing classes
-  // var classes = ["tile", "tile-" + tile.value, positionClass];
-  var classes = ["tile", "tile-" + (tile.value == 2 ? "2" : "4"), positionClass];
 
-  // if (tile.value > 2048) classes.push("tile-super");
+  // in this variation, only tile color of 2 and 4 are used
+  //var classes = ["tile", "tile-" + tile.value, positionClass];
+  var classes = ["tile", "tile-" + (tile.value == 2 ? "2" : "4"), positionClass];
 
   this.applyClasses(wrapper, classes);
 
   inner.classList.add("tile-inner");
-  // inner.textContent = tile.value;
+  // in this variation, tiles have no text content
+  //inner.textContent = tile.value;
   inner.textContent = '';
 
   if (tile.previousPosition) {
